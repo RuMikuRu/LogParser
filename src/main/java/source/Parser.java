@@ -81,8 +81,8 @@ public class Parser {
                 {
                     if(indexError!=-1) {
                         //TODO Сделать нормальный вывод в консоль
-                        System.out.println(getInterval(search(str.get(indexError), 3))[0] +":" + getInterval(search(str.get(indexError), 3))[1] + ":" + getInterval(search(str.get(indexError), 3))[2] +" начало ошибки");//начало ошибки
-                        System.out.println(Arrays.toString(getInterval(search(str.get(i - 1), 3)))+"Конец ошибок");//Конец ошибок
+                        System.out.println(getInterval(search(str.get(indexError), 3))[0] +":" + getInterval(search(str.get(indexError), 3))[1] + ":" + getInterval(search(str.get(indexError), 3))[2] +" начало ошибки");//это мем
+                        System.out.println(Arrays.toString(getInterval(search(str.get(i - 1), 3)))+"Конец ошибок");//а это нет, поэтому не работает
                     }
                 }
                 indexError=-1;
