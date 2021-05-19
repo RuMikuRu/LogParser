@@ -2,7 +2,6 @@ package source;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -48,10 +47,11 @@ public class Parser {
 
     public String[] getInterval(String str)
     { 
-       String[] str2 = {""};
+       String[] str2;
        str2 = str.split(":");
         return new String[]{str2[1],str2[2],str2[3]};
     }
+
 //TODO Завести indexError2(возвращение героя) для percent
     //TODO Разбить условия на разные методы
     public void calc()
@@ -59,8 +59,8 @@ public class Parser {
         ArrayList<String> str = makeStringArrayList();
         int k=0,j=0;
         int indexError=-1;
-        int indexError2=-1;
         double percent;
+        String tmp = "00";
         for(int i=0;i<str.size()-1;i++)
         {
             j++;
@@ -77,12 +77,20 @@ public class Parser {
             else
             {
                 percent=(double) k/j*100;
+                //TODO сделано не правильно, гон просто должен выдавать уровень доступности!!!!!!!!
                 if(percent>percent_Available)
                 {
                     if(indexError!=-1) {
                         //TODO Сделать нормальный вывод в консоль
-                        System.out.println(getInterval(search(str.get(indexError), 3))[0] +":" + getInterval(search(str.get(indexError), 3))[1] + ":" + getInterval(search(str.get(indexError), 3))[2] +" начало ошибки");//это мем
-                        System.out.println(Arrays.toString(getInterval(search(str.get(i - 1), 3)))+"Конец ошибок");//а это нет, поэтому не работает
+
+                        if (getInterval(search(str.get(indexError), 3))[2].equals(tmp)) {
+                            System.out.println(getInterval(search(str.get(indexError), 3))[0] + ":" + getInterval(search(str.get(indexError), 3))[1] + ":" + getInterval(search(str.get(indexError), 3))[2] + " начало ошибки");//это мем
+                            System.out.println(getInterval(search(str.get(i - 1), 3))[0] + ":" + getInterval(search(str.get(i - 1), 3))[1] + ":" + getInterval(search(str.get(i - 1), 3))[2] + "Конец ошибок");//а это нет, поэтому не работает
+                        }
+                        else
+                        {
+                            tmp=getInterval(search(str.get(indexError),3))[2];
+                        }
                     }
                 }
                 indexError=-1;
