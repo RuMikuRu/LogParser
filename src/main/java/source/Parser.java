@@ -53,7 +53,6 @@ public class Parser {
     }
 
 //TODO Завести indexError2(возвращение героя) для percent (скорее всего не понадобиться)
-    //TODO Разбить условия на разные методы
     public void calc()
     {
         ArrayList<String> str = makeStringArrayList();
