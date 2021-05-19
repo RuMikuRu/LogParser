@@ -52,7 +52,7 @@ public class Parser {
         return new String[]{str2[1],str2[2],str2[3]};
     }
 
-//TODO Завести indexError2(возвращение героя) для percent
+//TODO Завести indexError2(возвращение героя) для percent (скорее всего не понадобиться)
     //TODO Разбить условия на разные методы
     public void calc()
     {
@@ -76,7 +76,8 @@ public class Parser {
             }
             else
             {
-                percent=(double) k/j*100;
+                //TOdo Добавить это выражение для вывода (84, 27)
+                percent = ((double) k / j) * 100;
                 //TODO сделано не правильно, гон просто должен выдавать уровень доступности!!!!!!!!
                 if(percent>percent_Available)
                 {
@@ -84,6 +85,7 @@ public class Parser {
                         //TODO Сделать нормальный вывод в консоль
 
                         if (getInterval(search(str.get(indexError), 3))[2].equals(tmp)) {
+                            //TODO Сделать адекватный вывод(мб метод использовать)
                             System.out.println(getInterval(search(str.get(indexError), 3))[0] + ":" + getInterval(search(str.get(indexError), 3))[1] + ":" + getInterval(search(str.get(indexError), 3))[2] + " начало ошибки");//это мем
                             System.out.println(getInterval(search(str.get(i - 1), 3))[0] + ":" + getInterval(search(str.get(i - 1), 3))[1] + ":" + getInterval(search(str.get(i - 1), 3))[2] + "Конец ошибок");//а это нет, поэтому не работает
                         }
