@@ -91,6 +91,7 @@ public class Parser {
                         }
                         else
                         {
+                            //TODO Придумать нормальный вывод интервала времени, подобное не годиться(возможно придётся исользовать методы)
                             tmp=getInterval(search(str.get(indexError),3))[2];
                         }
                     }
